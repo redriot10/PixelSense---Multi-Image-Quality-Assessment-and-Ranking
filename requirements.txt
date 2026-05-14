@@ -1,0 +1,23 @@
+# Core image processing
+numpy
+opencv-python
+matplotlib
+pandas
+Pillow
+scikit-learn
+
+# Backend API
+fastapi
+uvicorn
+python-multipart
+pytesseract
+
+# Database (Phase 7)
+sqlalchemy
+pymongo
+
+# Object detection
+ultralytics
+
+# Testing
+pytest
