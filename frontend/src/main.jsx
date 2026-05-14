@@ -108,9 +108,12 @@ function App() {
   return (
     <main className="app">
       <header className="topbar">
-        <div>
-          <p className="kicker">Visual QA Workbench</p>
-          <h1>Multi-image quality assessment</h1>
+        <div className="brand">
+          <PixelSenseLogo />
+          <div>
+            <p className="kicker">PixelSense</p>
+            <h1>AI image quality ranking</h1>
+          </div>
         </div>
         <div className="actions">
           {best?.sourceUrl && <a className="button ghost" href={best.sourceUrl} download>Download best image</a>}
@@ -431,6 +434,27 @@ function GalleryIcon() {
         <path d="M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v10a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 17V7A1.5 1.5 0 0 1 5 5.5Z" />
         <path d="m5 16 4.1-4.1a1.2 1.2 0 0 1 1.7 0l2 2 1.1-1.1a1.2 1.2 0 0 1 1.7 0L19 16" />
         <path d="M15.8 9.2h.01" />
+      </svg>
+    </span>
+  );
+}
+
+function PixelSenseLogo() {
+  return (
+    <span className="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 48 48" role="img">
+        <defs>
+          <linearGradient id="pixelSenseLens" x1="10" y1="8" x2="40" y2="42" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#2f7d63" />
+            <stop offset="0.55" stopColor="#355f89" />
+            <stop offset="1" stopColor="#1b1d18" />
+          </linearGradient>
+        </defs>
+        <rect x="6" y="6" width="36" height="36" rx="10" fill="url(#pixelSenseLens)" />
+        <path d="M15 26.5c3.2-7 6.2-10.5 9-10.5s5.8 3.5 9 10.5c-3.2 3.7-6.2 5.5-9 5.5s-5.8-1.8-9-5.5Z" fill="#f8fbf4" opacity="0.92" />
+        <circle cx="24" cy="24" r="5.3" fill="#1b1d18" />
+        <circle cx="26.8" cy="21.3" r="1.7" fill="#f8fbf4" opacity="0.86" />
+        <path d="M11.5 14h6M30.5 34h6M34 11.5v6M14 30.5v6" stroke="#f8fbf4" strokeLinecap="round" strokeWidth="2.2" opacity="0.82" />
       </svg>
     </span>
   );

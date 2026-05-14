@@ -1,6 +1,6 @@
 # Core image processing
 numpy
-opencv-python
+opencv-python-headless
 matplotlib
 pandas
 Pillow

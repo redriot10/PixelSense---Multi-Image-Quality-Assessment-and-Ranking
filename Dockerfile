@@ -26,7 +26,10 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --timeout 300 --retries 5 \
+        --index-url https://download.pytorch.org/whl/cpu \
+        torch torchvision \
+    && pip install --no-cache-dir --timeout 300 --retries 5 -r requirements.txt
 
 COPY backend ./backend
 COPY data/models ./data/models
@@ -34,4 +37,4 @@ COPY --from=frontend-build /app/static ./static
 
 EXPOSE 8000
 
-CMD uvicorn backend.app:app --host 0.0.0.0 --port ${PORT:-8000}
+CMD ["sh", "-c", "uvicorn backend.app:app --host 0.0.0.0 --port ${PORT:-8000}"]

@@ -93,7 +93,7 @@ def load_env(path: Path) -> None:
 
 load_env(ROOT / ".env")
 
-app = FastAPI(title="Multi-Image Quality Analysis and Ranking System")
+app = FastAPI(title="PixelSense")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

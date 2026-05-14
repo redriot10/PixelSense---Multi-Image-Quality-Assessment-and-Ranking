@@ -40,6 +40,31 @@ p {
   padding: 10px 0 24px;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.brand-mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: #f8faf5;
+  box-shadow: 0 14px 30px rgba(27, 29, 24, 0.14);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.brand-mark svg {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
 .kicker,
 .eyebrow {
   color: #6e7468;
@@ -765,6 +790,10 @@ h2 {
   .summary {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .brand {
+    align-items: flex-start;
   }
 
   .sidebar,
