@@ -15,7 +15,7 @@ PixelSense is an AI-assisted image quality platform for comparing many uploaded 
 - Optional MongoDB persistence for analysis runs
 - Chat assistant powered by Groq with local fallback responses
 - React frontend served by the FastAPI backend
-- Docker-ready for local testing and container hosting
+- Docker-ready for local testing and Railway deployment
 
 ## Tech Stack
 
@@ -26,7 +26,7 @@ PixelSense is an AI-assisted image quality platform for comparing many uploaded 
 - Object detection: Ultralytics YOLO
 - Database: MongoDB
 - AI chat: Groq API
-- Deployment: Docker-compatible hosting
+- Deployment: Railway with Dockerfile builds
 
 ## Environment Variables
 
@@ -104,9 +104,9 @@ Use a local volume if you want uploaded files and generated reports to survive c
 docker run --env-file .env -p 8000:8000 -v ./runtime-data:/app/runtime-data pixelsense
 ```
 
-## Deployment
+## Railway Deployment
 
-PixelSense is packaged with a production `Dockerfile`. Deploy it on any host that supports Docker containers.
+PixelSense is packaged with a production `Dockerfile` and `railway.json` for Railway. Railway should build from the Dockerfile and use `/health` as the health check endpoint.
 
 Recommended runtime environment variables:
 
@@ -120,7 +120,7 @@ APP_DATA_DIR=/app/runtime-data
 MODEL_DIR=/app/data/models
 ```
 
-For long-term uploaded files and generated reports, attach persistent storage at:
+For long-term uploaded files and generated reports, attach Railway persistent storage at:
 
 ```text
 /app/runtime-data
